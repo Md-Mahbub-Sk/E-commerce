@@ -1,0 +1,25 @@
+.sidebar-wrapper{
+    background-color: #35a3dc;
+    margin-top: 1px;
+   
+    width: 220px;
+    border-radius: 20px;
+}
+.sidebar-wrapper ul li{
+    list-style-type: none;
+    padding: 10px 0;
+   
+}
+.sidebar-wrapper ul li a{
+    color:white;
+    font-size: 18px;
+    transition: .5s;
+    
+}
+.sidebar-wrapper ul li a:hover{
+    text-decoration: none;
+    margin-left: 15px;
+    background:black;
+    border-radius: 20px;
+    padding:5px 5px;
+}

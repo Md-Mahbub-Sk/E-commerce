@@ -1,0 +1,26 @@
+.cart-section{
+    text-align: center;
+}
+.icon-cart-btn{
+    font-size: 50px;
+    
+    display: block;
+}
+.icon-cart-btn div{
+    text-align: center;
+}
+.arrow-icon{
+    
+    position: relative;
+    font-size:50px;
+    animation: arrowUpDown 1s  infinite;
+}
+@keyframes arrowUpDown{
+    0%,100%{
+        top:0;
+    }
+    50%{
+        top:20px
+    }
+
+}

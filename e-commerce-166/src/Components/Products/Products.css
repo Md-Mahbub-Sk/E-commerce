@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Signika&display=swap');
+.card{
+    height:710px;
+    background:none;
+    border:none;
+    transition: .5s;
+    border-radius:50px;
+    padding:40px !important;
+    width:21rem;
+    text-align: center;
+}
+.productName{
+
+    height: 48px;
+    overflow: hidden;
+}
+.tooltip-text{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+}
+.tooltip-text span{
+    color:whitesmoke;
+    font-size: 20px;
+    text-transform: capitalize;
+    color:#17a2b8;
+}
+.price-bottom{
+    position: relative;
+}
+.price-bottom::after{
+    content: "";
+    position: absolute;
+    width:90px;
+    height:5px;
+    background:black;
+    top:23px;
+    left:0;
+    animation: priceBottom 2s infinite;
+}
+@keyframes priceBottom{
+    0%{
+        width:0;
+        opacity: 1;
+    }
+    50%{
+        width:90px;
+        opacity:0;
+    }
+    100%{
+        width:0;
+        opacity: 0;
+    }
+}
+.card-btn {
+    border:none;
+    background:none;
+    
+}
+.card-btn.button{
+   width:160px;
+   border-radius: 15px;
+   font-size: 16px;
+}
+.card:hover{
+    box-shadow: 10px 10px 20px lightgray,
+                -10px -10px 20px lightgray;
+}
+.detail-section{
+    font-family: 'Signika', sans-serif;
+    display: flex;
+    margin:50px auto;
+   
+}
+
+.detail-img{
+    width:300px;
+    display: block;
+    border-radius: 60px;
+    
+}
+.title-txt{
+    font-weight: bold;
+    font-size: 22px;
+    color:blue;
+    margin-bottom: 15px;
+}
+.cart-btn{
+    width: 135px;
+}
+@media screen and (max-width:1180px){
+    .card{
+        
+        width:25rem;
+    }
+}
+@media screen and (max-width:992px){
+    .card{
+        margin: 20px !important;
+        width:16rem;
+    }
+}
+@media  screen and (max-width:768px){
+    .card{
+        height:800px;
+        width:100%;
+        
+    } 
+}
+@media  screen and (max-width:360px){
+    .card{
+        height:750px;
+        width:100%;
+
+    } 
+}

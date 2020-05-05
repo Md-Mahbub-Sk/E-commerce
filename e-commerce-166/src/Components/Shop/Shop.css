@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Signika&display=swap');
+.product-container{
+    display: flex;
+    font-family: 'Signika', sans-serif;
+    margin-top: 20px;
+}
+
+
