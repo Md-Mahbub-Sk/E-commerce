@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Header.css';
-import { Navbar, Image, Button,Badge } from 'react-bootstrap';
+import { Navbar, Image,Badge } from 'react-bootstrap';
 import logo from '../../Img/Screenshot_1-removebg-preview.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
@@ -22,9 +22,6 @@ const Header = () => {
                         <div className="ml-auto">
                             <a href="/review" className="iconBtn">
                                 <FontAwesomeIcon icon={faCartPlus} />
-                                <sup>
-                                    <Badge variant="primary">{0}</Badge>
-                                </sup>
                             </a>
                         </div>
 

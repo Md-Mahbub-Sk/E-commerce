@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Button, Container, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,7 +6,7 @@ import { faInfoCircle, faShoppingCart, faHome } from '@fortawesome/free-solid-sv
 import { Link } from 'react-router-dom';
 import Magnifier from "react-magnifier";
 import './Products.css'
-import Cart from '../Cart/Cart';
+
 const Products = (props) => {
     const { img, category, stock, price, seller, name, key } = props.product;
 
@@ -20,25 +20,26 @@ const Products = (props) => {
                     <Container>
 
                         <Card className=" p-3  card" >
-                            <Card.Img variant="top" src={img} Rounded />
+                            <Card.Img variant="top" src={img} rounded="true" alt="cart img" />
                             <Card.Body className="mb-3">
                                 <Card.Title>{category}</Card.Title>
                                 <Card.Text>
-
-                                    <OverlayTrigger
-                                        key={"bottom"}
-                                        placement={"bottom"}
-                                        overlay={
-                                            <Tooltip id={`tooltip-${"bottom"}`}>
-                                                <p className="tooltip-text"><span>product name: </span>{name}</p>.
-                                                    </Tooltip>
-                                        }
-                                    >
-                                        <p className="productName text-justify">{name}</p>
-                                    </OverlayTrigger>
-                                    <h4>only <span style={{color:"red",fontWeight:"bold"}}>{stock}</span> pcs is left in stock</h4>
-                                    <h4>price: <span className="price-bottom">$ {price} </span></h4>
-                                    <h5>seller: {seller} Brand</h5>
+                                    <div>
+                                        <OverlayTrigger
+                                            key={"bottom"}
+                                            placement={"bottom"}
+                                            overlay={
+                                                <Tooltip id={`tooltip-${"bottom"}`}>
+                                                    <p className="tooltip-text"><span>product name: </span>{name}</p>
+                                                </Tooltip>
+                                            }
+                                        >
+                                            <p className="productName text-justify">{name}</p>
+                                        </OverlayTrigger>
+                                        <h4>only <span style={{ color: "red", fontWeight: "bold" }}>{stock}</span> pcs is left in stock</h4>
+                                        <h4>price: <span className="price-bottom">$ {price} </span></h4>
+                                        <h5>seller: {seller} Brand</h5>
+                                    </div>
                                 </Card.Text>
 
                             </Card.Body>
@@ -69,7 +70,7 @@ const Products = (props) => {
                     </div>
                     <div className="col-md-4">
                         <p><span className="title-txt">Model: </span> {name}</p>
-                        <h3><span className="title-txt">price: </span>${price}</h3>
+                        <h3><span className="title-txt">price: </span><span className="price-bottom">${price}</span></h3>
                         <h3><span className="title-txt">Brand:</span> {seller}</h3>
                         <Link to="/">
                             <Button className="cart-btn mt-5"

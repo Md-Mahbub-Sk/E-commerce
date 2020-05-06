@@ -33,13 +33,14 @@
     position: absolute;
     width:90px;
     height:5px;
-    background:black;
-    top:23px;
+    background:#17a2b8;
+    top:27px;
     left:0;
-    animation: priceBottom 2s infinite;
+    border-radius: 15px;
+    animation: priceBottom 3s infinite;
 }
 @keyframes priceBottom{
-    0%{
+    0%,100%{
         width:0;
         opacity: 1;
     }
@@ -47,10 +48,7 @@
         width:90px;
         opacity:0;
     }
-    100%{
-        width:0;
-        opacity: 0;
-    }
+    
 }
 .card-btn {
     border:none;
@@ -86,7 +84,7 @@
     margin-bottom: 15px;
 }
 .cart-btn{
-    width: 135px;
+    width: 145px;
 }
 @media screen and (max-width:1180px){
     .card{

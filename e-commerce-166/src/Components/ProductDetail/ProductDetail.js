@@ -5,7 +5,7 @@ import Products from '../Products/Products';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './ProductDetail.css';
-import { Row, Col } from 'react-bootstrap';
+import {  Col } from 'react-bootstrap';
 const ProductDetail = () => {
     const { productKey } = useParams();
     const product = fakeData.find(pd => pd.key === productKey);

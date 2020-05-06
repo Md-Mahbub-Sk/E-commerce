@@ -6,15 +6,34 @@ import Products from '../Products/Products';
 import { Row, Container, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cart from '../Cart/Cart';
+import { addToDatabaseCart } from '../../utilities/databaseManager';
 const Shop = () => {
-    const productFirst50 = fakeData.slice(0, 51);
-    const [products, setProducts] = useState(productFirst50);
+    const product80 = fakeData.slice(0, 80);
+    const [products, setProducts] = useState(product80);
 
     const [cart, setCart] = useState([])
     const handleAddProduct = (product) => {
-        const newCart = [...cart, product];
+        const addedKey = product.key
+        const sameProduct = cart.find(pd => pd.key === addedKey);
+        let count = 1;
+        let newCart;
+        if(sameProduct){
+            count = sameProduct.quantity + 1;
+         
+            sameProduct.quantity = count;
+           
+            const others = cart.filter(pd=> pd.key !== addedKey);
+            newCart = [...others,sameProduct];
+            
+
+        }else{
+            product.quantity = 1;
+            newCart = [...cart, product];
+        }
         setCart(newCart);
-        console.log(product,"product added");
+        
+        
+        addToDatabaseCart(product.key,count);
     }
 
     return (
@@ -25,11 +44,13 @@ const Shop = () => {
                 <Container >
 
                     <Row>
+                        
                         <Col className="d-flex align-items-center cart-section justify-content-center">
                             <Cart cart={cart}></Cart>
                         </Col>
                         {
                             products.map(product => <Products
+                                key = {product.key}
                                 showAddToCart={true}
                                 handleAddProduct={handleAddProduct}
                                 product={product}
