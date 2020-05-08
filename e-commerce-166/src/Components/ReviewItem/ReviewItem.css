@@ -17,8 +17,85 @@
 .review-item-product-detail{
     margin-left: 20px;
 }
-.review-item-product-detail span{
+.review-item-product-detail .review-item-product-detail-span{
     font-size: 20px;
     color:red;
     font-weight: bold;
 }
+
+@media screen and (max-width:768px){
+    .reviewItem-section-close-img{
+        margin-left: 200px;
+    }
+    .review-item-product-name{
+       height: 50px;
+       overflow: hidden;
+    }
+    .review-item-detail{
+        display: block !important;
+    }
+    .review-item-detail img{
+        margin: 0 auto;
+    }
+    .review-calc-section{
+        margin-top: 100px;
+    }
+}
+@media screen and (max-width:480px){
+    
+    .review-menu h3{
+        font-size: small;
+        font-weight: bold;
+    }
+    .review-menu{
+        text-align: center;
+        padding-left:10px;
+    }
+    .review-item-product-name{
+        height: 160px;
+        overflow: hidden;
+     }
+    .review-item-detail p .review-item-product-detail-span{
+        font-size: 13px;
+    }
+    .review-calc-section{
+        margin-top: 200px;
+        font-size: 17px;
+        color:red;
+        font-weight: bold;
+    }
+    
+}
+@media screen and (max-width:360px){
+    .reviewItem-section-close-img{
+        margin-left: 150px;
+    }
+    .review-menu h3{
+        font-size: small;
+        font-weight: bold;
+    }
+    .review-item-product-name{
+        height: 150px;
+        overflow: hidden;
+     }
+    .review-menu{
+        text-align: center;
+        padding-left:30px;
+        padding-right: 0px !important;
+    }
+    .review-item-detail{
+       
+    }
+    .review-item-detail p .review-item-product-detail-span{
+        font-size: 13px;
+    }
+    .review-calc-section{
+        margin-top: 200px;
+        font-size: 14px;
+        color:red;
+        font-weight: bold;
+        padding-right: 0 !important;
+    }
+    
+}
+

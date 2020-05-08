@@ -17,9 +17,9 @@ const Products = (props) => {
         <div>
             {props.showAddToCart ?
                 <div className="m-3">
-                    <Container>
+                    <Container className="product-container">
 
-                        <Card className=" p-3  card" >
+                        <Card className=" card" >
                             <Card.Img variant="top" src={img} rounded="true" alt="cart img" />
                             <Card.Body className="mb-3">
                                 <Card.Title>{category}</Card.Title>
@@ -51,7 +51,7 @@ const Products = (props) => {
                                         <FontAwesomeIcon icon={faInfoCircle} /> Product Detail
                                     </Button>
                                 </Link>
-                                <Button className="cart-btn mt-2"
+                                <Button className="cart-btn "
                                     onClick={() => props.handleAddProduct(props.product)}
                                     variant="outline-info"
                                 >
@@ -65,10 +65,12 @@ const Products = (props) => {
                 /**this item is product detail's item */
 
                 <div className="container detail-section">
-                    <div className="detail-img col-md-4">
-                        <Magnifier className="" src={img} />
+                    <div className="detail-img  col-md-6">
+                        <div>
+                            <Magnifier className="" src={img} />
+                        </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-6 info-section">
                         <p><span className="title-txt">Model: </span> {name}</p>
                         <h3><span className="title-txt">price: </span><span className="price-bottom">${price}</span></h3>
                         <h3><span className="title-txt">Brand:</span> {seller}</h3>
@@ -77,7 +79,7 @@ const Products = (props) => {
 
                                 variant="outline-info"
                             >
-                                <FontAwesomeIcon icon={faHome} /> Back to Home
+                                <FontAwesomeIcon icon={faHome} /> Back to Shop
                             </Button>
                         </Link>
                     </div>

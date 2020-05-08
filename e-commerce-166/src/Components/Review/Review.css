@@ -1,5 +1,6 @@
-.review-section{
-    
+@import url('https://fonts.googleapis.com/css?family=Philosopher&display=swap');
+.review-wrap{
+    font-family: 'Philosopher', sans-serif;
 }
 .review-detail{
     display: flex;

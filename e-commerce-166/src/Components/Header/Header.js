@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Header.css';
-import { Navbar, Image,Badge } from 'react-bootstrap';
+import { Navbar, Image } from 'react-bootstrap';
 import logo from '../../Img/Screenshot_1-removebg-preview.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'

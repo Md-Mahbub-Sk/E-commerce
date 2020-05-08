@@ -56,9 +56,10 @@
     
 }
 .card-btn.button{
-   width:160px;
+   width:180px;
    border-radius: 15px;
    font-size: 16px;
+   
 }
 .card:hover{
     box-shadow: 10px 10px 20px lightgray,
@@ -68,6 +69,7 @@
     font-family: 'Signika', sans-serif;
     display: flex;
     margin:50px auto;
+    align-items: center;
    
 }
 
@@ -77,6 +79,10 @@
     border-radius: 60px;
     
 }
+.info-section{
+    margin-top:150px;
+    margin-left: 50px;
+}
 .title-txt{
     font-weight: bold;
     font-size: 22px;
@@ -85,30 +91,86 @@
 }
 .cart-btn{
     width: 145px;
+    margin-top: 5px;
+    
 }
 @media screen and (max-width:1180px){
-    .card{
-        
+    
+    .card{ 
         width:25rem;
+    }
+    .info-section{
+        margin-top:0px;
+        margin-left: 50px;
     }
 }
 @media screen and (max-width:992px){
     .card{
         margin: 20px !important;
-        width:16rem;
+        width:24rem;
     }
+    .cart-btn{
+        width: 145px;
+        margin-left: 5px;      
+    }
+
 }
 @media  screen and (max-width:768px){
     .card{
-        height:800px;
-        width:100%;
-        
+        height:940px;
+        width:100%;  
     } 
+    
+    .cart-btn{
+        width: 145px;
+        margin-left: 5px;  
+        margin-top: 0;    
+    }
+    .info-section{
+        margin-top:0px;
+        margin-left: 50px;
+    }
 }
-@media  screen and (max-width:360px){
+@media  screen and (max-width:480px){
+    .detail-section{
+        font-family: 'Signika', sans-serif;
+        display: block;
+        margin:50px auto;
+        align-items: center;
+        text-align: center;
+    }
+    .detail-img{
+        width:300px;
+        display: block;
+        border-radius: 60px;
+        margin: 0 auto;
+    }
+    .info-section{
+        margin-top:0px;
+        margin-left: 0px;
+    }
     .card{
         height:750px;
         width:100%;
+    } 
+    .product-container{
+        margin-right:0 auto;
+    }
+    .cart-btn{
+        width: 133px;
+        margin-top: 5px; 
+        margin-left: 0;
+         
+    }
+}
+@media  screen and (max-width:360px){
+    .card{
+        height:630px;
+        width:100%;
 
     } 
+    .info-section{
+        margin-top:50px;
+        margin-left: 0px;
+    }
 }
