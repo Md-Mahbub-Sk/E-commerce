@@ -14,6 +14,8 @@ import BraceletProduct from './Components/BraceletProduct/BraceletProduct';
 import BodysprayProduct from './Components/BodysprayProduct/BodysprayProduct';
 import NotFound from './Components/NotFound/NotFound';
 import ProductDetail from './Components/ProductDetail/ProductDetail';
+import MobileProduct from './Components/MobileProduct/MobileProduct';
+import SignIn from './Components/SignIn/SignIn';
 
 function App() {
   return (
@@ -42,8 +44,14 @@ function App() {
           <Route path="/bodySpray">
             <BodysprayProduct></BodysprayProduct>
           </Route>
+          <Route path="/mobile">
+            <MobileProduct></MobileProduct>
+          </Route>
           <Route path="/product/:productKey">
             <ProductDetail></ProductDetail>
+          </Route>
+          <Route path="/signIn">
+            <SignIn></SignIn>
           </Route>
           <Route path="*">
             <NotFound></NotFound>

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import './WatchProduct.css'
-import fakeData from '../../fakeData';
 import Products from '../Products/Products';
 import { Row, Container, Col, Badge } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cart from '../Cart/Cart';
 import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
-const WatchProduct = () => {
-    const product80 = fakeData.slice(0, 80);
+import androids from '../../fakeData/android';
+const MobileProduct = () => {
+    const product80 = androids.slice(0, 80);
+
     const [products, setProducts] = useState(product80);
 
     const [cart, setCart] = useState([])
@@ -16,7 +16,7 @@ const WatchProduct = () => {
         const savedCart = getDatabaseCart();
         const productKeys = Object.keys(savedCart);
         const findProduct = productKeys.map(pdKey => {
-            const product = fakeData.find(pd => pd.key === pdKey)
+            const product = androids.find(pd => pd.key === pdKey)
             product.quantity = savedCart[pdKey]
             return product;
         })
@@ -52,7 +52,7 @@ const WatchProduct = () => {
             <div className="product-container">
 
                 <Container >
-                    <h1>WatchProduct is here</h1>
+                    <h1>Mobile Product is here</h1>
                     <Row>
 
                         <Col className="d-flex align-items-center cart-section justify-content-center">
@@ -65,14 +65,14 @@ const WatchProduct = () => {
                                     </span>
                                 </div>
                                 <a href="/review" className="icon-cart-btn">
-
-                                    <div>
-                                        <img src="https://img.icons8.com/color/96/000000/shopping-cart.png" />
-                                        <sup>
-                                            <Badge variant="primary">{cart.length}</Badge>
-                                        </sup>
-                                    </div>
-
+                                    
+                                        <div>
+                                            <img src="https://img.icons8.com/color/96/000000/shopping-cart.png" />
+                                            <sup>
+                                                <Badge variant="primary">{cart.length}</Badge>
+                                            </sup>
+                                        </div>
+                                
 
                                 </a>
                             </Cart>
@@ -98,4 +98,4 @@ const WatchProduct = () => {
     );
 };
 
-export default WatchProduct;
+export default MobileProduct;

@@ -1,6 +1,12 @@
 .nav-bar-section{
     border-bottom:1px solid #35a3dc !important;
+
+}
+.nav-bar-section nav{
+   
+    background:whitesmoke !important;
 }
 .iconBtn{
-    font-size: 25px;
+    font-size: 35px;
+    color:#35a3dc;
 }

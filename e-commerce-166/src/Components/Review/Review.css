@@ -7,4 +7,9 @@
 }
 .cartBtn{
     background-color: lightblue;
+    text-align: center;
+}
+.cart-btn-wrap{
+    padding-bottom: 40px;
+    text-align: center;
 }

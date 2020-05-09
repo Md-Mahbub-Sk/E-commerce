@@ -1,0 +1,18 @@
+.categoryDetail{
+    display: flex;
+   width:20rem;
+ 
+}
+.categoryDetail a{
+    border-radius: 20px;
+}
+.categoryDetail-item{
+    background:linear-gradient(to right,#e9c5d8,#f8f1e6);
+    height: 250px;
+    border-radius:50px;
+    margin: 25px;
+}
+.categoryDetail-item img{
+    width:150px; 
+    height: 150px;
+}

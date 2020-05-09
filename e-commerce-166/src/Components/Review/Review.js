@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { getDatabaseCart, removeFromDatabaseCart } from '../../utilities/databaseManager';
+import { getDatabaseCart, removeFromDatabaseCart, processOrder } from '../../utilities/databaseManager';
 import fakeData from '../../fakeData';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Col, Badge, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartPlus, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import './Review.css'
@@ -13,7 +13,7 @@ import Cart from '../Cart/Cart';
 const Review = (props) => {
 
     const [cart, setCart] = useState([]);
-    console.log(cart)
+    const [orderPlaced, setOrderPlaced] = useState(false);
     const handleRemoveFromCart = (productKey) => {
         console.log("remove product", productKey);
         const newCart = cart.filter(pd => pd.key !== productKey);
@@ -32,6 +32,11 @@ const Review = (props) => {
         });
         setCart(cartProducts)
     }, [])
+    const handlePlaceOrder = () => {
+        setCart([])
+        setOrderPlaced(true)
+        processOrder()
+    }
     return (
         <div>
             <Container className="review-wrap">
@@ -78,14 +83,26 @@ const Review = (props) => {
                             product={pd}></ReviewItem>)
                     }
                 </Col>
-                <Link to="/">
-                    <Button className="cart-btn m-3"
+                <div className="cart-btn-wrap">
+                    {
+                        orderPlaced ? <Link to="/"><Button className="cart-btn  text-center"
+                            onClick={handlePlaceOrder}
+                            variant="outline-info"
+                        >
+                            <img src="https://img.icons8.com/color/48/000000/shopping-basket.png" alt="icon" /><p>Back To shop</p>
+                        </Button></Link> :
 
-                        variant="outline-info"
-                    >
-                        <FontAwesomeIcon icon={faHome} /> Back to Home
+                            <Button className="cart-btn  text-center"
+                                onClick={handlePlaceOrder}
+                                variant="outline-info"
+                            >
+                                <img src="https://img.icons8.com/color/48/000000/shopping-basket.png" alt="icon" /><p>Place Order</p>
                             </Button>
-                </Link>
+
+                    }
+
+
+                </div>
             </Container>
         </div>
     );

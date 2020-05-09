@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Shop.css'
 import fakeData from '../../fakeData';
 import Products from '../Products/Products';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
-import { Row, Container, Col, OverlayTrigger, Tooltip, Badge } from 'react-bootstrap';
+import { Row, Container, Col,  Badge } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cart from '../Cart/Cart';
 import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
@@ -70,22 +68,14 @@ const Shop = () => {
                                     </span>
                                 </div>
                                 <a href="/review" className="icon-cart-btn">
-                                    <OverlayTrigger
-                                        key={"left"}
-                                        placement={"left"}
-                                        overlay={
-                                            <Tooltip id={`tooltip-${"left"}`}>
-                                                <p style={{ fontSize: "20px" }}><strong>CLick for going to order review</strong></p>
-                                            </Tooltip>
-                                        }
-                                    >
+                                    
                                         <div>
-                                            <FontAwesomeIcon icon={faCartPlus} />
+                                            <img src="https://img.icons8.com/color/96/000000/shopping-cart.png" />
                                             <sup>
                                                 <Badge variant="primary">{cart.length}</Badge>
                                             </sup>
                                         </div>
-                                    </OverlayTrigger>
+                                    
 
                                 </a>
                             </Cart>
@@ -101,9 +91,7 @@ const Shop = () => {
                         }
 
                     </Row>
-                    <Row>
-
-                    </Row>
+                
                 </Container>
 
             </div>
